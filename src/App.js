@@ -4,9 +4,18 @@ import Lista from "./lista";
 
 
 function App() {
-  const [tarefas, setTareras] =  useState([])
+  //criando array de taretas para salva a tarefa e salva cada verto e salva no localStorage e regarregar todo vez que foi iniciado
+  const [tarefas, setTareras] =  useState(() => {
+    const salva = localStorage.getItem("tarefas");
+    return salva ? JSON.parse(salva) : []; 
+  });
   
 
+  //usando hook de useEffect para salva as tarefas que o usuario criar no seu proprio computador
+  useEffect(()=> {
+    //localStorage so aceita strings usando o Json.stringify para converte para string o array
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
+  }, [tarefas]);
   //função para adiciona tarefas novas no final do da lista
 
   function adicionaTarefa(tarefa){
