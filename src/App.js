@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import Formulario from "./Formulario";
-import Lista from "./Lista";
+import Lista from "./lista";
 
 
 function App() {
