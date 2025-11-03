@@ -6,7 +6,7 @@ function Formulario({onAdicionar}){
     const [input, setInput] = useState("")
 
 
-    //função para receber os dados digitado e enviar para o pai do array tarefas
+    //função para receber os dados digitado e enviar para o pai do array tarefa
     function enviar(){
         if(input.trim() !== ""){
             const novaTarefa = {
