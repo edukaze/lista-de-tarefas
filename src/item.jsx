@@ -1,13 +1,21 @@
 
 //função que fazer a remoção de cada item e mostra cada item em formato de lista
 
-function Item({texto, onRemover}){
+function Item({tarefa, onRemover, onToggle}){
     return(
         <li>
-            {texto}
+            <input 
+                type="checkbox" 
+                checked= {tarefa.concluida}
+                onChange={onToggle}
+            />{""}
+            <span style={{ textDecoration: tarefa.concluida ? "line-through" : "none" }}>
+                {tarefa.texto}
+            </span>
+            
             <button onClick={onRemover}>❌</button>
         </li>
-    )
+    );
 }
 
 export default Item;

@@ -2,14 +2,15 @@ import Item from "./item";
 
 //função que vai criar a lista e coloca em sequencia 
 
-function Lista({tarefas, onRemover}){
+function Lista({tarefas, onRemover, onToggle}){
     return(
         <ul>
-            {tarefas.map((tarefa, i) => (
+            {tarefas.map((tarefa, index) => (
                <Item
-               key={i}
-               texto={tarefa}
-               onRemover={()=> onRemover(i)}
+               key={tarefa.id}
+               tarefa={tarefa}
+               onRemover={()=> onRemover(index)}
+               onToggle={() => onToggle(index)}
                ></Item> 
             ))}
         </ul>
