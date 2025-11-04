@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Formulario from "./Formulario";
 import Lista from "./lista";
+import './App.css';
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
   }
 
   return(
-    <div style={{padding: 20}}>
+    <div className="card-principal">
       <h1>Minhas Tarefas</h1>
       <Formulario
        onAdicionar={adicionaTarefa}>
